@@ -1,16 +1,24 @@
 //Proyecto de  Django v6.0.3//
 
+CRUD de Gestión de Tareas en Django con Autenticación: Sistema robusto con protección de rutas y control de sesión, donde cada usuario gestiona exclusivamente su propio contenido. Incluye un panel de superusuario con permisos globales para la administración, edición y eliminación total de tareas en la plataforma.
+
 //Requeriments//
 asgiref==3.11.1
 Django==6.0.3
 sqlparse==0.5.5
 tzdata==2025.3
 
+//Instalar requerimients//
+pip install -r requirements.txt
+
 //Crear entorno Virtual// 
 py -m venv venv
 
 //Activar entorno virtual//
 venv\Scripts\activate
+
+//Hacer migraciones//
+python manage.py migrate
 
 //Iniciar servidor//
 python manage.py runserver
