@@ -6,7 +6,7 @@ class OrderForm(forms.ModelForm):
         model = Order
         fields = ['title', 'description', 'important']
         widgets = {
-            'title': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Write a title'}),
-            'description': forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Write a description'}),
+            'title': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Escribe un titulo'}),
+            'description': forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Escribe una descripcion'}),
             'important': forms.CheckboxInput(attrs={'class': 'form-check-input m-auto'}),
         }
