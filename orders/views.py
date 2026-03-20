@@ -3,8 +3,8 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
 from django.contrib.auth import login, logout, authenticate
 from django.db import IntegrityError
-from .forms import TaskForm
-from .models import Task
+from .forms import OrderForm
+from .models import Order
 from django.utils import timezone
 from django.contrib.auth.decorators import login_required
 
@@ -29,7 +29,7 @@ def signup(request):
                     ['password1'])
                 user.save()
                 login(request, user)
-                return redirect('tasks')
+                return redirect('orders')
             except IntegrityError:
                 return render(request, 'signup.html', {
                     'form': UserCreationForm(),
@@ -41,64 +41,64 @@ def signup(request):
         })
 
 login_required        
-def tasks(request):
-    tasks = Task.objects.filter(user=request.user, datecompleted__isnull=True)
-    return render(request, 'tasks.html', {'tasks': tasks})
+def orders(request):
+    orders = Order.objects.filter(user=request.user, datecompleted__isnull=True)
+    return render(request, 'orders.html', {'orders': orders})
 
 @login_required
-def tasks_completed(request):
-    tasks = Task.objects.filter(user=request.user, datecompleted__isnull=False).order_by
+def orders_completed(request):
+    orders = Order.objects.filter(user=request.user, datecompleted__isnull=False).order_by
     ('-datecompleted')
-    return render(request, 'tasks.html', {'tasks': tasks})
+    return render(request, 'orders.html', {'orders': orders})
 
 @login_required
-def create_task(request):
+def create_order(request):
     if request.method == 'GET':
-        return render(request, 'create_task.html', {
-            'form': TaskForm
+        return render(request, 'create_order.html', {
+            'form': OrderForm
         })
     else:
         try:
-            form = TaskForm(request.POST)
-            new_task = form.save(commit=False)
-            new_task.user = request.user
-            new_task.save()
-            return redirect('tasks')
+            form = OrderForm(request.POST)
+            new_order = form.save(commit=False)
+            new_order.user = request.user
+            new_order.save()
+            return redirect('orders')
         except ValueError:
-            return render(request, 'create_task.html', {
-                'form': TaskForm,
+            return render(request, 'create_order.html', {
+                'form': OrderForm,
                 'error': 'Please provide valida data'
             })
             
 @login_required    
-def task_detail(request, task_id):
+def order_detail(request, order_id):
     if request.method == 'GET':
-        task = get_object_or_404(Task, pk=task_id, user=request.user)
-        form = TaskForm(instance=task)
-        return render(request, 'task_detail.html', {'task': task, 'form': form})
+        order = get_object_or_404(Order, pk=order_id, user=request.user)
+        form = OrderForm(instance=order)
+        return render(request, 'order_detail.html', {'order': order, 'form': form})
     else:
         try:
-            task = get_object_or_404(Task, pk=task_id, user=request.user)
-            form = TaskForm(request.POST, instance=task)
+            order = get_object_or_404(Order, pk=order_id, user=request.user)
+            form = OrderForm(request.POST, instance=order)
             form.save()
-            return redirect('tasks')
+            return redirect('orders')
         except ValueError:
-            return render(request, 'task_detail.html', {'task': task, 'form': form, 'error': "Error updating task"})
+            return render(request, 'order_detail.html', {'order': order, 'form': form, 'error': "Error updating order"})
 
 @login_required     
-def complete_task(request, task_id):
-    task = get_object_or_404(Task, pk=task_id, user=request.user)       
+def complete_order(request, order_id):
+    order = get_object_or_404(Order, pk=order_id, user=request.user)       
     if request.method == 'POST':
-        task.datecompleted = timezone.now()
-        task.save()
-        return redirect('tasks')
+        order.datecompleted = timezone.now()
+        order.save()
+        return redirect('orders')
 
 @login_required    
-def delete_task(request, task_id):
-    task = get_object_or_404(Task, pk=task_id, user=request.user)       
+def delete_order(request, order_id):
+    order = get_object_or_404(Order, pk=order_id, user=request.user)       
     if request.method == 'POST':
-        task.delete()
-        return redirect('tasks')   
+        order.delete()
+        return redirect('orders')   
 
 @login_required        
 def signout(request):
@@ -121,5 +121,5 @@ def signin(request):
             })
         else:
             login(request, user)
-            return redirect('tasks')
+            return redirect('orders')
         

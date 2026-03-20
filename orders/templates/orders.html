@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<main class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+                <h1 class="text-center display-3 py-5">Orders Pending</h1>
+
+            <ul class="list-group">
+                {% for order in orders %}
+                <a class="list-group-item" href="{% url 'order_detail' order.id %}">
+                        <header class="d-flex justify-content-between">
+                            {% if order.important %}
+                            <h1 class="fw-bold text-success">{{order.title}}</h1>
+                            {% else %}
+                            <h1 class="fw-bold">{{order.title}}</h1>
+                            {% endif %}
+                            <p>{{order.user.username}}</p>
+                        </header>
+
+                        <p>{{order.description}}</p>
+                        
+
+                        <p>{{order.datecompleted|date:'M j Y:i'}}</p>
+                </a>
+                {% endfor %}
+            </ul>
+
+        </div>
+    </div>
+</main>
+
+{% endblock %}

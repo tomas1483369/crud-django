@@ -1,9 +1,9 @@
 from django import forms
-from .models import Task
+from .models import Order
 
-class TaskForm(forms.ModelForm):
+class OrderForm(forms.ModelForm):
     class Meta:
-        model = Task
+        model = Order
         fields = ['title', 'description', 'important']
         widgets = {
             'title': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Write a title'}),

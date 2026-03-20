@@ -24,13 +24,13 @@
 
                 {% if user.is_authenticated %}
                 <li class="nav-item">
-                  <a class="nav-link" href="{% url 'tasks' %}">Tasks Pending</a>
+                  <a class="nav-link" href="{% url 'orders' %}">Orders Pending</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="{% url 'tasks_completed' %}">Tasks completed</a>
+                  <a class="nav-link" href="{% url 'orders_completed' %}">Orders completed</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="{% url 'create_task' %}">Create task</a>
+                  <a class="nav-link" href="{% url 'create_order' %}">Create order</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="{% url 'logout' %}">Logout</a>
