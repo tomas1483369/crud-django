@@ -16,17 +16,24 @@ def home(request):
 
 
 def signup(request):
-
     if request.method == 'GET':
         return render(request, 'signup.html', {
             'form': UserCreationForm(),
         })
     else:
-        if request.POST['password1'] == request.POST['password2']: 
+        username = request.POST['username']
+        password1 = request.POST['password1']
+        password2 = request.POST['password2']
+        
+        if password1 == password2:
+            
+            if len(password1) < 8:
+                return render(request, 'signup.html', {
+                    'form': UserCreationForm(),
+                    'error': 'La contraseña debe tener 8 caracteres al menos'
+                })
             try:
-                user = User.objects.create_user(
-                    username=request.POST['username'],password=request.POST
-                    ['password1'])
+                user = User.objects.create_user(username=username, password=password1)
                 user.save()
                 login(request, user)
                 return redirect('orders')
@@ -35,12 +42,14 @@ def signup(request):
                     'form': UserCreationForm(),
                     'error': 'User already exists'
                 })
-        return render(request, 'signup.html', {
-            'form': UserCreationForm(),
-            'error': 'Password do not match'
-        })
+        else:
+            return render(request, 'signup.html', {
+                'form': UserCreationForm(),
+                'error': 'Passwords do not match'
+            })
+        
 
-login_required        
+@login_required        
 def orders(request):
     orders = Order.objects.filter(user=request.user, datecompleted__isnull=True)
     return render(request, 'orders.html', {'orders': orders})

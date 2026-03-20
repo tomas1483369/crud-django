@@ -19,28 +19,28 @@
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                  <a class="nav-link" href="/">Home</a>
+                  <a class="nav-link" href="/">Inicio</a>
                 </li>
 
                 {% if user.is_authenticated %}
                 <li class="nav-item">
-                  <a class="nav-link" href="{% url 'orders' %}">Orders Pending</a>
+                  <a class="nav-link" href="{% url 'orders' %}">Pedidos pendientes</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="{% url 'orders_completed' %}">Orders completed</a>
+                  <a class="nav-link" href="{% url 'orders_completed' %}">Pedidos completados</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="{% url 'create_order' %}">Create order</a>
+                  <a class="nav-link" href="{% url 'create_order' %}">Crear pedido</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                  <a class="nav-link" href="{% url 'logout' %}">Cerrar Seccion</a>
                 </li>
                 {% else %}
                 <li class="nav-item">
-                  <a class="nav-link" href="{% url 'signup' %}">Signup</a>
+                  <a class="nav-link" href="{% url 'signup' %}">Registrarse</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="{% url 'signin' %}">Signin</a>
+                  <a class="nav-link" href="{% url 'signin' %}">Iniciar Sesion</a>
                 </li>
                 {% endif %}
               </ul>
