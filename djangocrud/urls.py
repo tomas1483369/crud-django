@@ -21,7 +21,6 @@ from orders import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    
    
     path('', landing_views.landing_home, name='landing'),
 
@@ -38,4 +37,6 @@ urlpatterns = [
         path('orders/<int:order_id>/complete/', views.complete_order, name='complete_order'),
         path('orders/<int:order_id>/delete/', views.delete_order, name='delete_order'),
     ])),
+
+    path('', include('productos.urls')),
 ]

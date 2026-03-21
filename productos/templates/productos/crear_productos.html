@@ -1,0 +1,14 @@
+
+{% extends 'layouts/base.html'%}
+
+{% block title %} Crear Productos {% endblock %}
+
+{% block content %}
+    <h1>Crear nuevos productos</h1>
+    {{error}}
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button>Crear productos</button>
+    </form>
+{% endblock %}
