@@ -41,6 +41,7 @@ DJANGO_APPS = [
 
 PROJECTS_DJANGO = [
     'orders',
+    'landing',
     'productos',
 ]
 
