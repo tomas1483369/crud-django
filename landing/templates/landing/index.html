@@ -4,19 +4,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>REDestamcion</title>
+    <title>RED</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #ffffff; }
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: #ffffff; 
+        }
         
         /* Ajustes de marca */
-        .navbar-brand-custom { font-weight: bold; font-size: 1.8rem; }
-        .btn-auth { border-radius: 50px; padding: 8px 25px; font-weight: 600; }
+        .navbar-brand-custom { 
+            font-weight: bold; 
+            font-size: 1.8rem; 
+        }
+        .btn-auth { 
+            border-radius: 50px; 
+            padding: 8px 25px; 
+            font-weight: 600; 
+        }
 
         /* Hero Section */
-        .hero-section { padding: 80px 0; border-bottom: 1px solid #f1f1f1; }
-        .hero-title { font-size: 3.5rem; font-weight: 900; line-height: 1.1; margin-bottom: 20px; }
+        .hero-section { 
+            padding: 80px 0; 
+            border-bottom: 1px solid #f1f1f1; }
+
+        .hero-title { 
+            font-size: 3.5rem; 
+            font-weight: 900; 
+            line-height: 1.1; 
+            margin-bottom: 20px; }
         
         .btn-hero { 
             padding: 15px 40px; 
@@ -26,19 +43,45 @@
             transition: 0.3s; 
             display: inline-block; 
         }
-        .btn-hero:hover { transform: scale(1.05); filter: brightness(90%); }
+        .btn-hero:hover { 
+            transform: scale(1.05); 
+            filter: brightness(90%); 
+        }
 
         /* Editor Visual */
-        .editor-preview { position: relative; display: inline-block; }
-        .shirt-img { max-width: 100%; position: relative; z-index: 1; border-radius: 20px; }
+        .editor-preview { 
+            position: relative; 
+            display: inline-block; }
+
+        .shirt-img { 
+            max-width: 100%; 
+            position: relative; 
+            z-index: 1; 
+            border-radius: 20px; }
+
         .edit-tools {
-            position: absolute; left: -20px; top: 50%; transform: translateY(-50%);
-            padding: 15px; border-radius: 15px; z-index: 2;
+            position: absolute; 
+            left: -20px; top: 50%; 
+            transform: translateY(-50%);
+            padding: 15px; 
+            border-radius: 15px; 
+            z-index: 2;
         }
-        .tool-icon { display: block; margin: 15px 0; font-size: 1.6rem; cursor: pointer; }
+        .tool-icon { 
+            display: block; 
+            margin: 15px 0; 
+            font-size: 1.6rem; 
+            cursor: pointer; 
+        }
 
         /* Secciones */
-        .section-title { font-weight: 800; margin-bottom: 40px; text-transform: uppercase; letter-spacing: 1px; }
+        .section-title { 
+            font-weight: 800; 
+            margin-bottom: 40px; 
+            text-transform: uppercase; 
+            letter-spacing: 1px; 
+        }
+
         .step-icon { 
             width: 70px; height: 70px; 
             border-radius: 50%; 
@@ -60,7 +103,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-danger sticky-top py-3 shadow">
         <div class="container">
-            <a class="navbar-brand navbar-brand-custom text-white" href="#">RED<span class="opacity-75">estampacion</span></a>
+            <a class="navbar-brand navbar-brand-custom text-white" href="{% url 'landing' %}">RED</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -84,13 +127,14 @@
     </nav>
 
     {% block content %}
+
     <header class="hero-section bg-white">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6 mb-5 mb-lg-0 text-center text-lg-start">
                     <h1 class="hero-title text-dark">¡CREA TU CAMISETA ÚNICA!</h1>
                     <p class="lead text-muted mb-4 fs-4">Visualiza tu diseño antes de comprar. La mejor tecnología de estampación en Medellín.</p>
-                    <a href="/dashboard/orders/create/" class="btn btn-danger btn-hero shadow-lg">¡Empieza a Diseñar Ahora!</a>
+                    <a href="#" class="btn btn-danger btn-hero shadow-lg">¡Empieza a Diseñar Ahora!</a>
                 </div>
                 <div class="col-lg-6 text-center">
                     <div class="editor-preview">
@@ -155,7 +199,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 mb-4 mb-lg-0">
-                    <h4 class="footer-title">REDestampacion</h4>
+                    <h4 class="footer-title">RED</h4>
                     <p class="text-white-50">Expertos en diseño personalizado en Medellín. Calidad profesional en cada prenda.</p>
                     <div class="mt-4">
                         <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
@@ -184,6 +228,7 @@
             </div>
         </div>
     </footer>
+
     {% endblock %}
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

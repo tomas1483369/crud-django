@@ -10,11 +10,6 @@ from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
-
-def home(request):
-    return render(request, 'home.html')
-
-
 def signup(request):
     if request.method == 'GET':
         return render(request, 'signup.html', {
@@ -112,7 +107,7 @@ def delete_order(request, order_id):
 @login_required        
 def signout(request):
     logout(request)
-    return redirect('home')
+    return redirect('landing')
 
 def signin(request):
     if request.method == 'GET':
