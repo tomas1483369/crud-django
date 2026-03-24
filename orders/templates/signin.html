@@ -1,10 +1,10 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %} 
 
-
+{% block content %}
 <main class="container">
     <div class=""row>
         <section class="col-md-4 offset-md-4 mt-5">
-    <form action="/signin/" method= "POST" class="card card-body">
+    <form action="{% url 'signin' %}" method= "POST" class="card card-body">
 
     <h1 class="text-center">Iniciar Sesion</h1>
 
