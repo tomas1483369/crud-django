@@ -1,0 +1,19 @@
+
+{% extends 'base.html'%}
+
+{% block title %} Listar Productos {% endblock %}
+
+{% block content %}
+
+<h1>Productos</h1>
+{% for i in productos %}
+    <h2>{{ i.titulo }}</h2>
+    <p>{{ i.descripcion }}</p>
+    {% if i.upload %}
+        <img src="{{ i.upload.url }}" alt="{{ i.titulo }}">
+    {% else %}
+        <img src="{{ MEDIA_URL }}productos/default.jpg" alt="Imagen por defecto">
+    {% endif %}
+{% endfor %}
+
+{% endblock %}
