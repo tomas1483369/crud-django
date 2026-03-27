@@ -7,14 +7,13 @@
     <title>REDestamcion</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="icon" type="image/png" href="{% static 'white-tshirt.png' %}">
     <style>
         body { font-family: 'Inter', sans-serif; background-color: #ffffff; }
         
-        /* Ajustes de marca */
         .navbar-brand-custom { font-weight: bold; font-size: 1.8rem; }
         .btn-auth { border-radius: 50px; padding: 8px 25px; font-weight: 600; }
 
-        /* Hero Section */
         .hero-section { padding: 80px 0; border-bottom: 1px solid #f1f1f1; }
         .hero-title { font-size: 3.5rem; font-weight: 900; line-height: 1.1; margin-bottom: 20px; }
         
@@ -28,7 +27,6 @@
         }
         .btn-hero:hover { transform: scale(1.05); filter: brightness(90%); }
 
-        /* Editor Visual */
         .editor-preview { position: relative; display: inline-block; }
         .shirt-img { max-width: 100%; position: relative; z-index: 1; border-radius: 20px; }
         .edit-tools {
@@ -37,7 +35,6 @@
         }
         .tool-icon { display: block; margin: 15px 0; font-size: 1.6rem; cursor: pointer; }
 
-        /* Secciones */
         .section-title { font-weight: 800; margin-bottom: 40px; text-transform: uppercase; letter-spacing: 1px; }
         .step-icon { 
             width: 70px; height: 70px; 
@@ -47,7 +44,6 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.05); 
         }
 
-        /* Footer */
         .footer-main { padding: 60px 0 20px; }
         .footer-title { font-weight: bold; margin-bottom: 25px; color: #fff; }
         .social-icon { font-size: 1.5rem; margin-right: 15px; transition: 0.3s; display: inline-block; color: #fff; }
@@ -90,7 +86,7 @@
                 <div class="col-lg-6 mb-5 mb-lg-0 text-center text-lg-start">
                     <h1 class="hero-title text-dark">¡CREA TU CAMISETA ÚNICA!</h1>
                     <p class="lead text-muted mb-4 fs-4">Visualiza tu diseño antes de comprar. La mejor tecnología de estampación en Medellín.</p>
-                    <a href="/dashboard/orders/create/" class="btn btn-danger btn-hero shadow-lg">¡Empieza a Diseñar Ahora!</a>
+                    <a href="http://localhost:5173/" class="btn btn-danger btn-hero shadow-lg">¡Empieza a Diseñar Ahora!</a>
                 </div>
                 <div class="col-lg-6 text-center">
                     <div class="editor-preview">
@@ -130,21 +126,21 @@
                 <div class="row g-3 text-center">
                     <div class="col-4">
                         <div class="card card-insp shadow-sm">
-                            <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80&w=500" class="card-img-top">
+                            <img src="https://images.unsplash.com/photo-1621951753015-740c699ab970?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top">
                         </div>
                         <p class="small mt-2 text-muted">Urbano</p>
                     </div>
                     <div class="col-4">
                         <div class="card card-insp shadow-sm border-danger">
-                            <img src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=500" class="card-img-top">
+                            <img src="https://images.unsplash.com/photo-1578237421804-9674940e8b8e?q=80&w=626&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top">
                         </div>
                         <p class="small mt-2 text-muted">Minimal</p>
                     </div>
                     <div class="col-4">
                         <div class="card card-insp shadow-sm">
-                            <img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=500" class="card-img-top">
+                            <img src="https://images.unsplash.com/photo-1643881080002-afdc695936e0?q=80&w=709&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top">
                         </div>
-                        <p class="small mt-2 text-muted">Corp</p>
+                        <p class="small mt-2 text-muted">Corporativo</p>
                     </div>
                 </div>
             </div>
